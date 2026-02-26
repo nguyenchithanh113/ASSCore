@@ -5,11 +5,6 @@
   "description": "All-purpose system stacks",
   "unity": "6.0",
   "license": "MIT",
-  "dependencies": {
-    "com.bazyleu.unistate": "https://github.com/bazyleu/UniState.git?path=Assets/UniState",
-    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
-    "jp.hadashikick.vcontainer": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer"
-  },
   "author": {
     "name": "Thanh",
     "email": "chithanh1131999@gmail.com"
