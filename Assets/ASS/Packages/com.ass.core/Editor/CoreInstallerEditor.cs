@@ -71,6 +71,8 @@ namespace ASS.Core.Editor
                 
                 AddPackageDependency("com.cysharp.r3", "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity");
                 
+                UnityEditor.PackageManager.Client.Resolve();
+                
                 Debug.Log("Install Complete");
             }
             else
