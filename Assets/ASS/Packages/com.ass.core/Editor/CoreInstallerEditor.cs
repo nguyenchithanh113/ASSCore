@@ -47,7 +47,11 @@ namespace ASS.Core.Editor
             {
                 string packagesContent = @"<?xml version=""1.0"" encoding=""utf-8""?>
 <packages>
-  <package id=""R3"" version=""1.3.0"" />
+  <package id=""Microsoft.Bcl.AsyncInterfaces"" version=""6.0.0"" />
+  <package id=""Microsoft.Bcl.TimeProvider"" version=""8.0.0"" />
+  <package id=""R3"" version=""1.3.0"" manuallyInstalled=""true"" />
+  <package id=""System.ComponentModel.Annotations"" version=""5.0.0"" />
+  <package id=""System.Threading.Channels"" version=""8.0.0"" />
 </packages>";
                 File.WriteAllText(packagesPath, packagesContent, new UTF8Encoding());
                 requireInstallation = true;
@@ -62,6 +66,9 @@ namespace ASS.Core.Editor
                 AddPackageDependency("jp.hadashikick.vcontainer", "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.17.0");
                 
                 AddPackageDependency("com.github-glitchenzo.nugetforunity", "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity");
+                // Force Unity to resolve packages
+                UnityEditor.PackageManager.Client.Resolve();
+                
                 AddPackageDependency("com.cysharp.r3", "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity");
                 
                 Debug.Log("Install Complete");
@@ -87,9 +94,7 @@ namespace ASS.Core.Editor
 
                 // Write the updated JSON back to the file
                 File.WriteAllText(manifestPath, manifestJson.ToString(Unity.Plastic.Newtonsoft.Json.Formatting.Indented));
-            
-                // Force Unity to resolve packages
-                UnityEditor.PackageManager.Client.Resolve();
+                
                 Debug.Log($"Added dependency: {name}@{url}");
             }
             else
