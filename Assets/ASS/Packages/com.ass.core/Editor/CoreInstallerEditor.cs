@@ -14,11 +14,6 @@ namespace ASS.Core.Editor
             string nugetConfigPath = Path.Combine(Application.dataPath, "NuGet.config");
             string packagesPath = Path.Combine(Application.dataPath, "packages.config");
             
-            /*string nugetConfigTempPath = Path.Combine(Application.dataPath, "Packages/ASS/Core/Resources/NuGet.config");
-            string packagesTempPath = Path.Combine(Application.dataPath, "Packages/ASS/Core/Resources/packages.config");*/
-
-            bool requireInstallation = false;
-            
             if (!File.Exists(nugetConfigPath))
             {
                 string nugetConfigContent = @"<?xml version=""1.0"" encoding=""utf-8""?>
@@ -40,7 +35,6 @@ namespace ASS.Core.Editor
   </config>
 </configuration>";
                 File.WriteAllText(nugetConfigPath, nugetConfigContent, new UTF8Encoding());
-                requireInstallation = true;
             }
 
             if (!File.Exists(packagesPath))
@@ -54,31 +48,23 @@ namespace ASS.Core.Editor
   <package id=""System.Threading.Channels"" version=""8.0.0"" />
 </packages>";
                 File.WriteAllText(packagesPath, packagesContent, new UTF8Encoding());
-                requireInstallation = true;
             }
 
-            if (requireInstallation)
-            {
-                AssetDatabase.Refresh();
+            AssetDatabase.Refresh();
                 
-                AddPackageDependency("com.bazyleu.unistate", "https://github.com/bazyleu/UniState.git?path=Assets/UniState");
-                AddPackageDependency("com.cysharp.unitask", "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask");
-                AddPackageDependency("jp.hadashikick.vcontainer", "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.17.0");
+            AddPackageDependency("com.bazyleu.unistate", "https://github.com/bazyleu/UniState.git?path=Assets/UniState");
+            AddPackageDependency("com.cysharp.unitask", "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask");
+            AddPackageDependency("jp.hadashikick.vcontainer", "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.17.0");
                 
-                AddPackageDependency("com.github-glitchenzo.nugetforunity", "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity");
-                // Force Unity to resolve packages
-                UnityEditor.PackageManager.Client.Resolve();
+            AddPackageDependency("com.github-glitchenzo.nugetforunity", "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity");
+            // Force Unity to resolve packages
+            UnityEditor.PackageManager.Client.Resolve();
                 
-                AddPackageDependency("com.cysharp.r3", "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity");
+            AddPackageDependency("com.cysharp.r3", "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity");
                 
-                UnityEditor.PackageManager.Client.Resolve();
+            UnityEditor.PackageManager.Client.Resolve();
                 
-                Debug.Log("Install Complete");
-            }
-            else
-            {
-                Debug.Log("Already Installed");
-            }
+            Debug.Log("Install Complete");
         }
         
         public static void AddPackageDependency(string name, string url)
