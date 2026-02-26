@@ -1,7 +1,7 @@
 {
-  "name": "com.core.ass",
+  "name": "com.ass.core",
   "version": "1.0.0",
-  "displayName": "Core",
+  "displayName": "com.ass.core",
   "description": "All-purpose system stacks",
   "unity": "6.0",
   "license": "MIT",

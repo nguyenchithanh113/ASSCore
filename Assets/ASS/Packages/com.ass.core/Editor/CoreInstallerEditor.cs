@@ -13,8 +13,8 @@ namespace ASS.Core.Editor
             string nugetConfigPath = Path.Combine(Application.dataPath, "NuGet.config");
             string packagesPath = Path.Combine(Application.dataPath, "packages.config");
             
-            string nugetConfigTempPath = Path.Combine(Application.dataPath, "ASS/Core/Resources/NuGet.config");
-            string packagesTempPath = Path.Combine(Application.dataPath, "ASS/Core/Resources/packages.config");
+            string nugetConfigTempPath = Path.Combine(Application.dataPath, "Packages/ASS/Core/Resources/NuGet.config");
+            string packagesTempPath = Path.Combine(Application.dataPath, "Packages/ASS/Core/Resources/packages.config");
 
             bool requireInstallation = false;
             
