@@ -1,6 +1,6 @@
 {
     "name": "ASS.Core.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "ASS.Core",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

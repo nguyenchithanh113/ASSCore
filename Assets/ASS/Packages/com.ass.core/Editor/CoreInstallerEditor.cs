@@ -5,9 +5,10 @@ using UnityEngine;
 
 namespace ASS.Core.Editor
 {
-    public static class ConfigurationManager
+    public class CoreInstallerEditor
     {
-        static ConfigurationManager()
+        [MenuItem("ASS/Core/Install")]
+        public static void Install()
         {
             string nugetConfigPath = Path.Combine(Application.dataPath, "NuGet.config");
             string packagesPath = Path.Combine(Application.dataPath, "packages.config");
@@ -37,6 +38,12 @@ namespace ASS.Core.Editor
                 
                 AddPackageDependency("com.github-glitchenzo.nugetforunity", "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity");
                 AddPackageDependency("com.cysharp.r3", "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity");
+                
+                Debug.Log("Install Complete");
+            }
+            else
+            {
+                Debug.Log("Already Installed");
             }
         }
         

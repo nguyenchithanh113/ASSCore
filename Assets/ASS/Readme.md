@@ -1,1 +1,0 @@
-All-Purpose System Stacks
