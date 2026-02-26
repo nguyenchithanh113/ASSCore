@@ -1,19 +1,33 @@
-﻿using System.IO;
+using System.IO;
 using System.Text;
 using Unity.Plastic.Newtonsoft.Json.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace ASS.Core.Editor
 {
-    internal class CoreInstallerEditor : EditorWindow
+    public class CoreInstallerEditorWindow : EditorWindow
     {
-        public static void OpenEditor()
-        {
-            var editor = EditorWindow.GetWindow<CoreInstallerEditor>();
-            editor.Show();
+        [SerializeField] private VisualTreeAsset m_VisualTreeAsset = default;
 
+        [MenuItem("ASS/Core/CoreInstallerEditorWindow")]
+        public static void ShowExample()
+        {
+            CoreInstallerEditorWindow wnd = GetWindow<CoreInstallerEditorWindow>();
+            wnd.titleContent = new GUIContent("CoreInstallerEditorWindow");
+            
             Validate();
+        }
+
+        public void CreateGUI()
+        {
+            // Each editor window contains a root VisualElement object
+            VisualElement root = rootVisualElement;
+
+            // Instantiate UXML
+            VisualElement labelFromUXML = m_VisualTreeAsset.Instantiate();
+            root.Add(labelFromUXML);
         }
         
         internal static void Validate()
