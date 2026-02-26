@@ -1,8 +1,8 @@
 {
-  "name": "com.ass.core",
+  "name": "com.ass",
   "version": "1.0.0",
-  "displayName": "Core",
-  "description": "Core for All-purpose system stacks",
+  "displayName": "ASS",
+  "description": "All-purpose system stacks",
   "unity": "6.0",
   "license": "MIT",
   "dependencies": {
