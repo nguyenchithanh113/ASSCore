@@ -32,10 +32,11 @@ namespace ASS.Core.Editor
 
         private Dictionary<string, string> m_BasePackageDict = new()
         {
+            {"com.cysharp.r3", "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity"},
             {"com.ass.mvvm",
                 "https://github.com/nguyenchithanh113/All-purposeSystemStacks.git?path=Assets/AllPurposeSystemStacks/Packages/com.ass.mvvm"},
             {"com.ass.vcontainer",
-                "https://github.com/nguyenchithanh113/All-purposeSystemStacks.git?path=Assets/AllPurposeSystemStacks/Packages/com.ass.vcontainer"}
+                "https://github.com/nguyenchithanh113/All-purposeSystemStacks.git?path=Assets/AllPurposeSystemStacks/Packages/com.ass.vcontainer"},
         };
         
         public PackageModel[] Packages { get; private set; }
