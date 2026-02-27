@@ -131,6 +131,7 @@ namespace ASS.Core.Editor
   <package id=""Microsoft.Bcl.TimeProvider"" version=""8.0.0"" />
   <package id=""R3"" version=""1.3.0"" manuallyInstalled=""true"" />
   <package id=""System.ComponentModel.Annotations"" version=""5.0.0"" />
+  <package id=""System.Runtime.CompilerServices.Unsafe"" version=""6.0.0"" />
   <package id=""System.Threading.Channels"" version=""8.0.0"" />
 </packages>";
                 File.WriteAllText(packagesPath, packagesContent, new UTF8Encoding());
