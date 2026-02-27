@@ -23,6 +23,7 @@ namespace ASS.Core.Editor
         public class PackageModel
         {
             public string name;
+            public string url;
             public bool owned;
         }
 
@@ -32,7 +33,9 @@ namespace ASS.Core.Editor
         private Dictionary<string, string> m_BasePackageDict = new()
         {
             {"com.ass.mvvm",
-                "https://github.com/nguyenchithanh113/All-purposeSystemStacks.git?path=Assets/ASS/Packages/com.ass.mvvm"}
+                "https://github.com/nguyenchithanh113/All-purposeSystemStacks.git?path=Assets/AllPurposeSystemStacks/Packages/com.ass.mvvm"},
+            {"com.ass.vcontainer",
+                "https://github.com/nguyenchithanh113/All-purposeSystemStacks.git?path=Assets/AllPurposeSystemStacks/Packages/com.ass.vcontainer"}
         };
         
         public PackageModel[] Packages { get; private set; }
@@ -54,6 +57,7 @@ namespace ASS.Core.Editor
                 Packages[i] = new PackageModel()
                 {
                     name = packageKeys[i],
+                    url = m_BasePackageDict[packageKeys[i]],
                     owned = m_Dependencies.ContainsKey(packageKeys[i])
                 };
             }

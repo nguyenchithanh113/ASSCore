@@ -1,0 +1,12 @@
+{
+  "name": "com.ass.vcontainer",
+  "version": "1.0.0",
+  "displayName": "com.ass.vcontainer",
+  "description": "Extensions for VContainer",
+  "unity": "6000.1",
+  "license": "MIT",
+  "author": {
+    "name": "Thanh",
+    "email": "chithanh1131999@gmail.com"
+  }
+}

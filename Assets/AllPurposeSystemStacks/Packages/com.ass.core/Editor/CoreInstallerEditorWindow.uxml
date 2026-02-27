@@ -1,12 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ui:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ui="UnityEngine.UIElements"
-    xmlns:uie="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
->
-    <Style src="project://database/Assets/ASS/Packages/com.ass.core/Editor/CoreInstallerEditorWindow.uss?fileID=7433441132597879392&amp;guid=148d3b61a40ca3a409fd42704d6d933d&amp;type=3#CoreInstallerEditorWindow" />
-	<ui:Label text="Hello World! From UXML" />
-	<ui:Label class="custom-label" text="Hello World! With Style" />
-
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/AllPurposeSystemStacks/Packages/com.ass.core/Editor/CoreInstallerEditorWindow.uss?fileID=7433441132597879392&amp;guid=148d3b61a40ca3a409fd42704d6d933d&amp;type=3#CoreInstallerEditorWindow" />
+    <ui:VisualElement name="Root" style="flex-grow: 1;">
+        <ui:VisualElement name="DependenciesBoard" style="flex-grow: 0; flex-shrink: 0; height: 387px;" />
+        <ui:Button text="UpdatePackages" name="UpdatePackagesButton" class="update-packages" style="width: 120px; align-self: flex-end; height: 34px; right: 20px;" />
+    </ui:VisualElement>
 </ui:UXML>
