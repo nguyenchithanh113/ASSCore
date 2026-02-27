@@ -106,6 +106,8 @@ namespace ASS.Core.Editor
 
             if (requireResolve)
             {
+                File.WriteAllText(manifestPath, manifestJson.ToString(Unity.Plastic.Newtonsoft.Json.Formatting.Indented));
+                AssetDatabase.Refresh();
                 // Force Unity to resolve packages
                 Client.Resolve();
             }
